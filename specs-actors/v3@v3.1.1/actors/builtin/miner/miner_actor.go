@@ -652,10 +652,10 @@ type PreCommitSectorParams = miner0.SectorPreCommitInfo
 // Proposals must be posted on chain via sma.PublishStorageDeals before PreCommitSector.
 // Optimization: PreCommitSector could contain a list of deals that are not published yet.
 func (a Actor) PreCommitSector(rt Runtime, params *PreCommitSectorParams) *abi.EmptyValue {
-	nv := rt.NetworkVersion()
-	if !CanPreCommitSealProof(params.SealProof, nv) {
-		rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
-	}
+// 	nv := rt.NetworkVersion()
+// 	if !CanPreCommitSealProof(params.SealProof, nv) {
+// 		rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
+// 	}
 	if params.SectorNumber > abi.MaxSectorNumber {
 		rt.Abortf(exitcode.ErrIllegalArgument, "sector number %d out of range 0..(2^63-1)", params.SectorNumber)
 	}

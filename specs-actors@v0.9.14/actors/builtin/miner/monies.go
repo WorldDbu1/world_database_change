@@ -16,8 +16,8 @@ import (
 // LockTarget = (LockTargetFactorNum / LockTargetFactorDenom) * FILCirculatingSupply(t)
 // PledgeShare(t) = sectorQAPower / max(BaselinePower(t), NetworkQAPower(t))
 // PARAM_FINISH
-var PreCommitDepositFactor = 20
-var InitialPledgeFactor = 20
+var PreCommitDepositFactor = 2
+var InitialPledgeFactor = 2
 var PreCommitDepositProjectionPeriod = abi.ChainEpoch(PreCommitDepositFactor) * builtin.EpochsInDay
 var InitialPledgeProjectionPeriod = abi.ChainEpoch(InitialPledgeFactor) * builtin.EpochsInDay
 var LockTargetFactorNum = big.NewInt(3)
@@ -30,7 +30,7 @@ var SpaceRaceInitialPledgeMaxPerByte = big.Div(big.NewInt(1e18), big.NewInt(32 <
 // FF = BR(t, DeclaredFaultProjectionPeriod)
 // projection period of 2.14 days:  2880 * 2.14 = 6163.2.  Rounded to nearest epoch 6163
 var DeclaredFaultFactorNumV0 = 214
-var DeclaredFaultFactorNumV3 = 351
+var DeclaredFaultFactorNumV3 = 3
 var DeclaredFaultFactorDenom = 100
 var DeclaredFaultProjectionPeriodV0 = abi.ChainEpoch((builtin.EpochsInDay * DeclaredFaultFactorNumV0) / DeclaredFaultFactorDenom)
 var DeclaredFaultProjectionPeriodV3 = abi.ChainEpoch((builtin.EpochsInDay * DeclaredFaultFactorNumV3) / DeclaredFaultFactorDenom)

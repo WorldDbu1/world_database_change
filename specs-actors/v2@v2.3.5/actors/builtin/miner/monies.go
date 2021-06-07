@@ -13,12 +13,12 @@ import (
 
 // Projection period of expected sector block reward for deposit required to pre-commit a sector.
 // This deposit is lost if the pre-commitment is not timely followed up by a commitment proof.
-var PreCommitDepositFactor = 20 // PARAM_SPEC
+var PreCommitDepositFactor = 2 // PARAM_SPEC
 var PreCommitDepositProjectionPeriod = abi.ChainEpoch(PreCommitDepositFactor) * builtin.EpochsInDay
 
 // Projection period of expected sector block rewards for storage pledge required to commit a sector.
 // This pledge is lost if a sector is terminated before its full committed lifetime.
-var InitialPledgeFactor = 20 // PARAM_SPEC
+var InitialPledgeFactor = 2 // PARAM_SPEC
 var InitialPledgeProjectionPeriod = abi.ChainEpoch(InitialPledgeFactor) * builtin.EpochsInDay
 
 // Cap on initial pledge requirement for sectors.
@@ -38,7 +38,7 @@ var InitialPledgeLockTarget = builtin.BigFrac{
 // The network conservatively assumes the sector was faulty since the last time it was proven.
 // This penalty is currently overly punitive for continued faults.
 // FF = BR(t, ContinuedFaultProjectionPeriod)
-var ContinuedFaultFactorNum = 351 // PARAM_SPEC
+var ContinuedFaultFactorNum = 3 // PARAM_SPEC
 var ContinuedFaultFactorDenom = 100
 var ContinuedFaultProjectionPeriod = abi.ChainEpoch((builtin.EpochsInDay * ContinuedFaultFactorNum) / ContinuedFaultFactorDenom)
 
@@ -57,7 +57,7 @@ const TerminationLifetimeCap = 140 // PARAM_SPEC
 const ConsensusFaultFactor = 5
 
 // Fraction of total reward (block reward + gas reward) to be locked up as of V6
-var LockedRewardFactorNumV6 = big.NewInt(75)
+var LockedRewardFactorNumV6 = big.NewInt(50)
 var LockedRewardFactorDenomV6 = big.NewInt(100)
 
 // The projected block reward a sector would earn over some period.

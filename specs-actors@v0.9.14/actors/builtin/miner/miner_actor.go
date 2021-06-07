@@ -99,10 +99,10 @@ type ConstructorParams = power.MinerConstructorParams
 func (a Actor) Constructor(rt Runtime, params *ConstructorParams) *abi.EmptyValue {
 	rt.ValidateImmediateCallerIs(builtin.InitActorAddr)
 
-	_, ok := SupportedProofTypes[params.SealProofType]
-	if !ok {
-		rt.Abortf(exitcode.ErrIllegalArgument, "proof type %d not allowed for new miner actors", params.SealProofType)
-	}
+// 	_, ok := SupportedProofTypes[params.SealProofType]
+// 	if !ok {
+// 		rt.Abortf(exitcode.ErrIllegalArgument, "proof type %d not allowed for new miner actors", params.SealProofType)
+// 	}
 
 	owner := resolveControlAddress(rt, params.OwnerAddr)
 	worker := resolveWorkerAddress(rt, params.WorkerAddr)
@@ -469,9 +469,9 @@ func (a Actor) SubmitWindowedPoSt(rt Runtime, params *SubmitWindowedPoStParams) 
 // Proposals must be posted on chain via sma.PublishStorageDeals before PreCommitSector.
 // Optimization: PreCommitSector could contain a list of deals that are not published yet.
 func (a Actor) PreCommitSector(rt Runtime, params *SectorPreCommitInfo) *abi.EmptyValue {
-	if _, ok := SupportedProofTypes[params.SealProof]; !ok {
-		rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type: %s", params.SealProof)
-	}
+// 	if _, ok := SupportedProofTypes[params.SealProof]; !ok {
+// 		rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type: %s", params.SealProof)
+// 	}
 	if params.SectorNumber > abi.MaxSectorNumber {
 		rt.Abortf(exitcode.ErrIllegalArgument, "sector number %d out of range 0..(2^63-1)", params.SectorNumber)
 	}
