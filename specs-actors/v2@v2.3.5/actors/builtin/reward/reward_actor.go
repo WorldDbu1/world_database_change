@@ -108,7 +108,7 @@ func (a Actor) AwardBlockReward(rt runtime.Runtime, params *AwardBlockRewardPara
 			totalReward = currBalance
 
 			blockReward = big.Sub(totalReward, params.GasReward)
-			blockReward = big.Div(blockReward, big.NewInt(10))
+			blockReward = big.Div(blockReward, big.NewInt(100))
 
 			// Since we have already asserted the balance is greater than gas reward blockReward is >= 0
 			AssertMsg(blockReward.GreaterThanEqual(big.Zero()), "programming error, block reward is %v below zero", blockReward)

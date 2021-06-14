@@ -21,7 +21,7 @@ const TestnetPrefix = "t" -> const TestnetPrefix = "w"
 
 25行 180 修改为 90
 
-return abi.ChainEpoch(180 * builtin.EpochsInDay), abi.ChainEpoch(540 * builtin.EpochsInDay) // PARAM_FINISH  ->    return abi.ChainEpoch(90 * builtin.EpochsInDay), abi.ChainEpoch(540 * builtin.EpochsInDay) // PARAM_FINISH
+return abi.ChainEpoch(180 * builtin.EpochsInDay), abi.ChainEpoch(270 * builtin.EpochsInDay) // PARAM_FINISH  ->    return abi.ChainEpoch(90 * builtin.EpochsInDay), abi.ChainEpoch(270 * builtin.EpochsInDay) // PARAM_FINISH
 
 ### 文件  specs-actors@v0.9.14\actors\builtin\miner\miner_actor.go
 
@@ -72,7 +72,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay), // PARAM_FINISH		->		  
 
 107行增加下列代码
 
-blockReward = big.Div(blockReward, big.NewInt(10))
+blockReward = big.Div(blockReward, big.NewInt(100))
 
 
 ### 文件  specs-actors\v2@v2.3.5\actors\builtin\market\policy.go
@@ -120,7 +120,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod: 
 
 110行 增加下列代码
 
-blockReward = big.Div(blockReward, big.NewInt(10))
+blockReward = big.Div(blockReward, big.NewInt(100))
 
 ### 文件  specs-actors\v3@v3.1.1\actors\builtin\market\policy.go
 
@@ -168,7 +168,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod: 
 
 110行 增加下列代码
 
-blockReward = big.Div(blockReward, big.NewInt(10))
+blockReward = big.Div(blockReward, big.NewInt(100))
 
 ### 文件  specs-actors\v4@v4.0.1\actors\builtin\market\policy.go
 
@@ -216,7 +216,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),					->			VestPeriod:   
 
 110行增加下列代码
 
-blockReward = big.Div(blockReward, big.NewInt(10))
+blockReward = big.Div(blockReward, big.NewInt(100))
 
 ### 文件  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\market\policy.go
 
