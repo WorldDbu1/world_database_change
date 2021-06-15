@@ -13,7 +13,7 @@ import (
 )
 
 // The period over which all a miner's active sectors will be challenged.
-var WPoStProvingPeriod = abi.ChainEpoch(builtin.EpochsInDay) // 24 hours
+var WPoStProvingPeriod = abi.ChainEpoch(builtin.EpochsInDay/24) // 24 hours
 
 // The duration of a deadline's challenge window, the period before a deadline when the challenge is available.
 var WPoStChallengeWindow = abi.ChainEpoch(30 * 60 / builtin.EpochDurationSeconds) // 30 minutes (48 per day)

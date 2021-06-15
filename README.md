@@ -70,7 +70,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay), // PARAM_FINISH		->		  
 
 ### 文件  specs-actors@v0.9.14\actors\builtin\reward\reward_actor.go
 
-107行增加下列代码
+111行增加下列代码
 
 blockReward = big.Div(blockReward, big.NewInt(100))
 
@@ -118,7 +118,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod: 
 
 ### 文件  specs-actors\v2@v2.3.5\actors\builtin\reward\reward_actor.go
 
-110行 增加下列代码
+115行 增加下列代码
 
 blockReward = big.Div(blockReward, big.NewInt(100))
 
@@ -166,7 +166,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod: 
 
 ### 文件  specs-actors\v3@v3.1.1\actors\builtin\reward\reward_actor.go
 
-110行 增加下列代码
+113行 增加下列代码
 
 blockReward = big.Div(blockReward, big.NewInt(100))
 
@@ -214,7 +214,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),					->			VestPeriod:   
 
 ### 文件  specs-actors\v4@v4.0.1\actors\builtin\reward\reward_actor.go
 
-110行增加下列代码
+113行增加下列代码
 
 blockReward = big.Div(blockReward, big.NewInt(100))
 
