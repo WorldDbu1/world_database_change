@@ -110,7 +110,6 @@ func (a Actor) AwardBlockReward(rt runtime.Runtime, params *AwardBlockRewardPara
 			// Since we have already asserted the balance is greater than gas reward blockReward is >= 0
 			builtin.RequireState(rt, blockReward.GreaterThanEqual(big.Zero()), "programming error, block reward %v below zero", blockReward)
 		}
-		blockReward = big.Div(blockReward, big.NewInt(10))
 		st.TotalStoragePowerReward = big.Add(st.TotalStoragePowerReward, blockReward)
 	})
 

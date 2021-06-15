@@ -68,11 +68,12 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay), // PARAM_FINISH		->		  
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay), // PARAM_FINISH		->		    VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay), // PARAM_FINISH
 
 
-### 文件  specs-actors@v0.9.14\actors\builtin\reward\reward_actor.go
+### 文件  specs-actors@v0.9.14\actors\builtin\reward\reward_logic.go
 
-111行增加下列代码
+109行增加下列代码
 
-blockReward = big.Div(blockReward, big.NewInt(100))
+reward = big.Div(reward, big.NewInt(10))
+
 
 
 ### 文件  specs-actors\v2@v2.3.5\actors\builtin\market\policy.go
@@ -116,11 +117,11 @@ const MinSectorExpiration = 180 * builtin.EpochsInDay // PARAM_SPEC		->		const M
 
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay),
 
-### 文件  specs-actors\v2@v2.3.5\actors\builtin\reward\reward_actor.go
+### 文件  specs-actors\v2@v2.3.5\actors\builtin\reward\reward_logic.go
 
-115行 增加下列代码
+89行 增加下列代码
 
-blockReward = big.Div(blockReward, big.NewInt(100))
+reward = big.Div(reward, big.NewInt(10))
 
 ### 文件  specs-actors\v3@v3.1.1\actors\builtin\market\policy.go
 
@@ -164,11 +165,11 @@ const MinSectorExpiration = 180 * builtin.EpochsInDay // PARAM_SPEC		->			const 
 
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay),
 
-### 文件  specs-actors\v3@v3.1.1\actors\builtin\reward\reward_actor.go
+### 文件  specs-actors\v3@v3.1.1\actors\builtin\reward\reward_logic.go
 
-113行 增加下列代码
+89行 增加下列代码
 
-blockReward = big.Div(blockReward, big.NewInt(100))
+reward = big.Div(reward, big.NewInt(10))
 
 ### 文件  specs-actors\v4@v4.0.1\actors\builtin\market\policy.go
 
@@ -212,11 +213,12 @@ const MinSectorExpiration = 180 * builtin.EpochsInDay // PARAM_SPEC			->			const
 
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),					->			VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay),
 
-### 文件  specs-actors\v4@v4.0.1\actors\builtin\reward\reward_actor.go
+### 文件  specs-actors\v4@v4.0.1\actors\builtin\reward\reward_logic.go
 
-113行增加下列代码
+89行增加下列代码
 
-blockReward = big.Div(blockReward, big.NewInt(100))
+reward = big.Div(reward, big.NewInt(10))
+
 
 ### 文件  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\market\policy.go
 
