@@ -72,7 +72,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay), // PARAM_FINISH		->		  
 
 109lineAdd the following code
 
-reward = big.Div(reward, big.NewInt(10))
+reward = big.Div(reward, big.NewInt(100))
 
 
 
@@ -121,7 +121,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod: 
 
 89line Add the following code
 
-reward = big.Div(reward, big.NewInt(10))
+reward = big.Div(reward, big.NewInt(100))
 
 ### file  specs-actors\v3@v3.1.1\actors\builtin\market\policy.go
 
@@ -169,7 +169,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod: 
 
 89line Add the following code
 
-reward = big.Div(reward, big.NewInt(10))
+reward = big.Div(reward, big.NewInt(100))
 
 ### file  specs-actors\v4@v4.0.1\actors\builtin\market\policy.go
 
@@ -217,7 +217,7 @@ VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),					->			VestPeriod:   
 
 89lineAdd the following code
 
-reward = big.Div(reward, big.NewInt(10))
+reward = big.Div(reward, big.NewInt(100))
 
 
 ### file  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\market\policy.go
