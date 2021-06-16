@@ -1,263 +1,263 @@
-# filecoin_change
+# world_database_change
 
-#### 介绍 filcoin 修改
+#### Introduce modification
 
-修改下列标注文件
+Modify the following annotation files
 
 
-### 文件  go-address@v0.0.5\address.go
+### file  go-address@v0.0.5\address.go
 
-55行 f 修改为 w
+55line f change into w
 
 const MainnetPrefix = "f" -> const MainnetPrefix = "w"
 
-58行 f 修改为 w
+58line f change into w
 
 const TestnetPrefix = "t" -> const TestnetPrefix = "w"
 
 
 
-### 文件  specs-actors@v0.9.14\actors\builtin\market\policy.go
+### file  specs-actors@v0.9.14\actors\builtin\market\policy.go
 
-25行 180 修改为 90
+25line 180 change into 90
 
 return abi.ChainEpoch(180 * builtin.EpochsInDay), abi.ChainEpoch(270 * builtin.EpochsInDay) // PARAM_FINISH  ->    return abi.ChainEpoch(90 * builtin.EpochsInDay), abi.ChainEpoch(270 * builtin.EpochsInDay) // PARAM_FINISH
 
-### 文件  specs-actors@v0.9.14\actors\builtin\miner\miner_actor.go
+### file  specs-actors@v0.9.14\actors\builtin\miner\miner_actor.go
 
-注释 102-105 行
+Annotation 102-105 line
 //     _, ok := SupportedProofTypes[params.SealProofType]
 //     if !ok {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "proof type %d not allowed for new miner actors", params.SealProofType)
 //     }
 
 
-注释 472-474 行
+Annotation 472-474 line
 
 //     if _, ok := SupportedProofTypes[params.SealProof]; !ok {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type: %s", params.SealProof)
 //     }
 
 
-### 文件  specs-actors@v0.9.14\actors\builtin\miner\monies.go
+### file  specs-actors@v0.9.14\actors\builtin\miner\monies.go
 
-19行 20 修改为 2
+19line 20 change into 2
 
 var PreCommitDepositFactor = 20			->		var PreCommitDepositFactor = 2
 
-20行 20 修改为 2
+20line 20 change into 2
 
 var InitialPledgeFactor = 20			->		var InitialPledgeFactor = 2
 
-33行 351 修改为 3
+33line 351 change into 3
 
 var DeclaredFaultFactorNumV3 = 351		->		var DeclaredFaultFactorNumV3 = 3
 
-### 文件  specs-actors@v0.9.14\actors\builtin\miner\policy.go
+### file  specs-actors@v0.9.14\actors\builtin\miner\policy.go
 
-115行 180 修改为 90
+115line 180 change into 90
 
 const MinSectorExpiration = 180 * builtin.EpochsInDay 		->			const MinSectorExpiration = 90 * builtin.EpochsInDay
 
-190行 180 修改为 90
+190line 180 change into 90
 
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay), // PARAM_FINISH		->		    VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay), // PARAM_FINISH
 
-197行 180修改为 90
+197line 180change into 90
 
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay), // PARAM_FINISH		->		    VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay), // PARAM_FINISH
 
 
-### 文件  specs-actors@v0.9.14\actors\builtin\reward\reward_logic.go
+### file  specs-actors@v0.9.14\actors\builtin\reward\reward_logic.go
 
-109行增加下列代码
+109lineAdd the following code
 
 reward = big.Div(reward, big.NewInt(10))
 
 
 
-### 文件  specs-actors\v2@v2.3.5\actors\builtin\market\policy.go
+### file  specs-actors\v2@v2.3.5\actors\builtin\market\policy.go
 
-21行 180 修改为 90
+21line 180 change into 90
 
 var DealMinDuration = abi.ChainEpoch(180 * builtin.EpochsInDay) // PARAM_SPEC		->		var DealMinDuration = abi.ChainEpoch(90 * builtin.EpochsInDay) // PARAM_SPEC
 
-### 文件  specs-actors\v2@v2.3.5\actors\builtin\miner\miner_actor.go
+### file  specs-actors\v2@v2.3.5\actors\builtin\miner\miner_actor.go
 
-注释	531-534 行
+Annotation	531-534 line
 
 //     if !CanPreCommitSealProof(params.SealProof, nv) {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
 //     }
 
-### 文件  specs-actors\v2@v2.3.5\actors\builtin\miner\monies.go
+### file  specs-actors\v2@v2.3.5\actors\builtin\miner\monies.go
 
-16行 20 修改为 2
+16line 20 change into 2
 var PreCommitDepositFactor = 20 // PARAM_SPEC		->		var PreCommitDepositFactor = 2 // PARAM_SPEC
 
-21行 20 修改为 2
+21line 20 change into 2
 
 var InitialPledgeFactor = 20 // PARAM_SPEC			->		var InitialPledgeFactor = 2 // PARAM_SPEC
 
-41行 351 修改为 3
+41line 351 change into 3
 
 var ContinuedFaultFactorNum = 351 // PARAM_SPEC		->		var ContinuedFaultFactorNum = 3 // PARAM_SPEC
 
-60行 75 修改为 50
+60line 75 change into 50
 
 var LockedRewardFactorNumV6 = big.NewInt(75)		->		var LockedRewardFactorNumV6 = big.NewInt(50)
 
-### 文件  specs-actors\v2@v2.3.5\actors\builtin\miner\policy.go
+### file  specs-actors\v2@v2.3.5\actors\builtin\miner\policy.go
 
-193行 180 修改为 90
+193line 180 change into 90
 
 const MinSectorExpiration = 180 * builtin.EpochsInDay // PARAM_SPEC		->		const MinSectorExpiration = 90 * builtin.EpochsInDay // PARAM_SPEC
 
-288行 180 修改为 90
+288line 180 change into 90
 
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay),
 
-### 文件  specs-actors\v2@v2.3.5\actors\builtin\reward\reward_logic.go
+### file  specs-actors\v2@v2.3.5\actors\builtin\reward\reward_logic.go
 
-89行 增加下列代码
+89line Add the following code
 
 reward = big.Div(reward, big.NewInt(10))
 
-### 文件  specs-actors\v3@v3.1.1\actors\builtin\market\policy.go
+### file  specs-actors\v3@v3.1.1\actors\builtin\market\policy.go
 
-21行 180 修改为 90
+21line 180 change into 90
 
 var DealMinDuration = abi.ChainEpoch(180 * builtin.EpochsInDay) // PARAM_SPEC		->		var DealMinDuration = abi.ChainEpoch(90 * builtin.EpochsInDay) // PARAM_SPEC
 
-### 文件  specs-actors\v3@v3.1.1\actors\builtin\miner\miner_actor.go
+### file  specs-actors\v3@v3.1.1\actors\builtin\miner\miner_actor.go
 
-注释655-658行
+Annotation655-658line
 //     nv := rt.NetworkVersion()
 //     if !CanPreCommitSealProof(params.SealProof, nv) {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
 //     }
 
-### 文件  specs-actors\v3@v3.1.1\actors\builtin\miner\monies.go
+### file  specs-actors\v3@v3.1.1\actors\builtin\miner\monies.go
 
-15行 20 修改为 2
+15line 20 change into 2
 
 var PreCommitDepositFactor = 20 // PARAM_SPEC		->		var PreCommitDepositFactor = 2 // PARAM_SPEC
 
-20行 20 修改为 2
+20line 20 change into 2
 
 var InitialPledgeFactor = 20 // PARAM_SPEC			->		var InitialPledgeFactor = 2 // PARAM_SPEC
 
-40行 351 修改为 3
+40line 351 change into 3
 
 var ContinuedFaultFactorNum = 351 // PARAM_SPEC		->		var ContinuedFaultFactorNum = 3 // PARAM_SPEC
 
-62行 75 修改为 50
+62line 75 change into 50
 
 var LockedRewardFactorNum = big.NewInt(75)			->		var LockedRewardFactorNum = big.NewInt(50)
 
-### 文件  specs-actors\v3@v3.1.1\actors\builtin\miner\policy.go
+### file  specs-actors\v3@v3.1.1\actors\builtin\miner\policy.go
 
-212行 180 修改为 90
+212line 180 change into 90
 
 const MinSectorExpiration = 180 * builtin.EpochsInDay // PARAM_SPEC		->			const MinSectorExpiration = 90 * builtin.EpochsInDay // PARAM_SPEC
 
-307行 180 修改为 90
+307line 180 change into 90
 
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),				->		    VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay),
 
-### 文件  specs-actors\v3@v3.1.1\actors\builtin\reward\reward_logic.go
+### file  specs-actors\v3@v3.1.1\actors\builtin\reward\reward_logic.go
 
-89行 增加下列代码
+89line Add the following code
 
 reward = big.Div(reward, big.NewInt(10))
 
-### 文件  specs-actors\v4@v4.0.1\actors\builtin\market\policy.go
+### file  specs-actors\v4@v4.0.1\actors\builtin\market\policy.go
 
-21行 180 修改为 90
+21line 180 change into 90
 
 var DealMinDuration = abi.ChainEpoch(180 * builtin.EpochsInDay) // PARAM_SPEC		->			var DealMinDuration = abi.ChainEpoch(90 * builtin.EpochsInDay) // PARAM_SPEC
 
-### 文件  specs-actors\v4@v4.0.1\actors\builtin\miner\miner_actor.go
+### file  specs-actors\v4@v4.0.1\actors\builtin\miner\miner_actor.go
 
-注释653-656行
+Annotation653-656line
 //     nv := rt.NetworkVersion()
 //     if !CanPreCommitSealProof(params.SealProof, nv) {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
 //     }
 
-### 文件  specs-actors\v4@v4.0.1\actors\builtin\miner\monies.go
+### file  specs-actors\v4@v4.0.1\actors\builtin\miner\monies.go
 
-15行 20 修改为 2
+15line 20 change into 2
 
 var PreCommitDepositFactor = 20 // PARAM_SPEC		->			var PreCommitDepositFactor = 2 // PARAM_SPEC
 
-20行 20 修改为 2 
+20line 20 change into 2 
 
 var InitialPledgeFactor = 20 // PARAM_SPEC			->			var InitialPledgeFactor = 2 // PARAM_SPEC
 
-40行 351 修改为 3
+40line 351 change into 3
 
 var ContinuedFaultFactorNum = 351 // PARAM_SPEC		->			var ContinuedFaultFactorNum = 3 // PARAM_SPEC
 
-62行 75 修改为 50
+62line 75 change into 50
 
 var LockedRewardFactorNum = big.NewInt(75)			->			var LockedRewardFactorNum = big.NewInt(50)
 
-### 文件  specs-actors\v4@v4.0.1\actors\builtin\miner\policy.go
+### file  specs-actors\v4@v4.0.1\actors\builtin\miner\policy.go
 
-212行 180 修改为 90
+212line 180 change into 90
 
 const MinSectorExpiration = 180 * builtin.EpochsInDay // PARAM_SPEC			->			const MinSectorExpiration = 90 * builtin.EpochsInDay // PARAM_SPEC
 
-307行 180 修改为 90
+307line 180 change into 90
 
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),					->			VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay),
 
-### 文件  specs-actors\v4@v4.0.1\actors\builtin\reward\reward_logic.go
+### file  specs-actors\v4@v4.0.1\actors\builtin\reward\reward_logic.go
 
-89行增加下列代码
+89lineAdd the following code
 
 reward = big.Div(reward, big.NewInt(10))
 
 
-### 文件  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\market\policy.go
+### file  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\market\policy.go
 
-21行 180 修改为 90
+21line 180 change into 90
 
 var DealMinDuration = abi.ChainEpoch(180 * builtin.EpochsInDay) // PARAM_SPEC		->		var DealMinDuration = abi.ChainEpoch(90 * builtin.EpochsInDay) // PARAM_SPEC
 
-### 文件  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\miner\miner_actor.go
+### file  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\miner\miner_actor.go
 
-注释655-657行代码
+Annotation655-657line代码
 
 //     if !CanPreCommitSealProof(params.SealProof, nv) {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
 //     }
 
-### 文件  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\miner\monies.go
+### file  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\miner\monies.go
 
-15行 20 修改为 2
+15line 20 change into 2
 
 var PreCommitDepositFactor = 20 // PARAM_SPEC			->			var PreCommitDepositFactor = 2 // PARAM_SPEC
 
-20行 20 修改为 2
+20line 20 change into 2
 
 var InitialPledgeFactor = 20 // PARAM_SPEC				->			var InitialPledgeFactor = 2 // PARAM_SPEC
 
-40行 351 修改为 3
+40line 351 change into 3
 
 var ContinuedFaultFactorNum = 351 // PARAM_SPEC			->			var ContinuedFaultFactorNum = 3 // PARAM_SPEC
 
-62行 75 修改为 50
+62line 75 change into 50
 
 var LockedRewardFactorNum = big.NewInt(75)				->			var LockedRewardFactorNum = big.NewInt(50)
 
-### 文件  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\miner\policy.go
+### file  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\miner\policy.go
 
-214行 180 修改为 90
+214line 180 change into 90
 
 const MinSectorExpiration = 180 * builtin.EpochsInDay // PARAM_SPEC			->			const MinSectorExpiration = 90 * builtin.EpochsInDay // PARAM_SPEC
 
-293行 180 修改为 90
+293line 180 change into 90
 
 VestPeriod:   abi.ChainEpoch(180 * builtin.EpochsInDay),					->		    VestPeriod:   abi.ChainEpoch(90 * builtin.EpochsInDay),
