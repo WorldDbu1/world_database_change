@@ -2,7 +2,7 @@
 
 #### Introduce modification
 
-Modify the following annotation files
+Modify the following annotation  files
 
 
 ### file  go-address@v0.0.5\address.go
@@ -25,14 +25,14 @@ return abi.ChainEpoch(180 * builtin.EpochsInDay), abi.ChainEpoch(270 * builtin.E
 
 ### file  specs-actors@v0.9.14\actors\builtin\miner\miner_actor.go
 
-Annotation 102-105 line
+Annotation  102-105 line
 //     _, ok := SupportedProofTypes[params.SealProofType]
 //     if !ok {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "proof type %d not allowed for new miner actors", params.SealProofType)
 //     }
 
 
-Annotation 472-474 line
+Annotation  472-474 line
 
 //     if _, ok := SupportedProofTypes[params.SealProof]; !ok {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type: %s", params.SealProof)
@@ -84,7 +84,7 @@ var DealMinDuration = abi.ChainEpoch(180 * builtin.EpochsInDay) // PARAM_SPEC		-
 
 ### file  specs-actors\v2@v2.3.5\actors\builtin\miner\miner_actor.go
 
-Annotation	531-534 line
+Annotation 	531-534 line
 
 //     if !CanPreCommitSealProof(params.SealProof, nv) {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
@@ -131,7 +131,7 @@ var DealMinDuration = abi.ChainEpoch(180 * builtin.EpochsInDay) // PARAM_SPEC		-
 
 ### file  specs-actors\v3@v3.1.1\actors\builtin\miner\miner_actor.go
 
-Annotation655-658line
+Annotation 655-658 line
 //     nv := rt.NetworkVersion()
 //     if !CanPreCommitSealProof(params.SealProof, nv) {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
@@ -179,7 +179,7 @@ var DealMinDuration = abi.ChainEpoch(180 * builtin.EpochsInDay) // PARAM_SPEC		-
 
 ### file  specs-actors\v4@v4.0.1\actors\builtin\miner\miner_actor.go
 
-Annotation653-656line
+Annotation 653-656line
 //     nv := rt.NetworkVersion()
 //     if !CanPreCommitSealProof(params.SealProof, nv) {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
@@ -228,7 +228,7 @@ var DealMinDuration = abi.ChainEpoch(180 * builtin.EpochsInDay) // PARAM_SPEC		-
 
 ### file  specs-actors\v5@v5.0.0-20210512015452-4fe3889fff57\actors\builtin\miner\miner_actor.go
 
-Annotation655-657line代码
+Annotation 655-657line code
 
 //     if !CanPreCommitSealProof(params.SealProof, nv) {
 //         rt.Abortf(exitcode.ErrIllegalArgument, "unsupported seal proof type %v at network version %v", params.SealProof, nv)
